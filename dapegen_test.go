@@ -132,7 +132,7 @@ func TestGeneratorUntil(t *testing.T) {
 
 	// loop 4 times to test if nextuntil is really stopping
 	for i := 0; i < 4; i++ {
-		for pn, _ := p.NextUntil(du); pn; pn, _ = p.NextUntil(du) {
+		for p.NextUntil(du) {
 			ct++
 		}
 	}

@@ -29,7 +29,7 @@ func main() {
 	// print first days until du
 	// loop 4 times to test if nextuntil is really stopping
 	for i := 0; i < 4; i++ {
-		for pn, _ := p.NextUntil(du); pn; pn, _ = p.NextUntil(du) {
+		for p.NextUntil(du) {
 			fmt.Printf("%s\n", p.CurrentDate.String())
 		}
 		fmt.Printf("@@ %s\n", p.CurrentDate.String())

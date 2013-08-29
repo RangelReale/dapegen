@@ -102,8 +102,14 @@ func (d *Generator) Next() bool {
 	return ret
 }
 
+// Generates the next period until the passed date, returns if have next
+func (d *Generator) NextUntil(date epochdate.Date) bool {
+	r, _ := d.NextUntilOrFinished(date)
+	return r
+}
+
 // Generates the next period until the passed date, returns if have next or finished
-func (d *Generator) NextUntil(date epochdate.Date) (havenext bool, isfinished bool) {
+func (d *Generator) NextUntilOrFinished(date epochdate.Date) (havenext bool, isfinished bool) {
 	f := d.FirstFromDate(date)
 	havenext, isfinished = d.nextUntilInternal(&f, false)
 	return
